@@ -1,4 +1,4 @@
-# Back End web application 
+# Full-Stack web application 
 For this application, I used PHP and Jquery and AJAX and an sqlite database.
 I used PHP (no framework) for the most of the backend and JQuery/Ajax for the like/dislike so it happens without reloading the page, and I chose Sqlite database in the data.db file because it is easier and faster to implement.
 
