@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>My APP</title>
+    <title><?php if($url == "login"){ echo "Login"; }else if($url == "Register"){ echo "Register"; }else if($url == "nearbyShops"){ echo "Nearby Shops"; }else if($url == "preferedShops"){ echo "Prefered Shops"; }?></title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
