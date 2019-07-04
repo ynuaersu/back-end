@@ -1,4 +1,5 @@
 	<?php 
+		// if user is  signed up then redirect to the nearbyShops page
 		if(isset($_SESSION['id'])){
 			header("location: nearbyShops");
 		}

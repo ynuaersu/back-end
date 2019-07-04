@@ -14,6 +14,7 @@ class User
 		}
 	}
 
+	// returns if a user exists
 	public static function userExist($c, $value){
 		$_db = new PDO('sqlite:../data.db', null, null, [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -28,6 +29,7 @@ class User
 		return false;
 	}
 
+	// to check user infos and return if the user is logged in or not
 	public static function userLogin($email, $password){
 		$_db = new PDO('sqlite:../data.db', null, null, [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -48,6 +50,7 @@ class User
 		}
 	}
 
+	// returns the user id from email
 	public static function getUserId($email){
 		$_db = new PDO('sqlite:../data.db', null, null, [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -59,6 +62,7 @@ class User
 		return (int)$data['id'];
 	}
 
+	// to check user infos and return if the user is registred into the db or not
 	public static function userRegister($email, $password){
 		$_db = new PDO('sqlite:../data.db', null, null, [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

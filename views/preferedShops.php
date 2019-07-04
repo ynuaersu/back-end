@@ -7,11 +7,13 @@
 </nav>
 <div id="container">
 <?php 
+  // if user is not signed up then redirect to the login page
   if(!isset($_SESSION['id'])){
     header("location: login");
   }
-  $shops = Shop::getShops();
+  $shops = Shop::getShops(); // array of all the shops
   for($i=0;$i<count($shops);$i++){
+    // if shops is liked
     if(Shop::liked($_SESSION['id'],$shops[$i]->id)){
     ?>
     <div class="shop" id="shop_<?= $shops[$i]->id ?>">

@@ -7,6 +7,8 @@ class Shop
 	private $_image;
 	private $_distance;
 
+
+	// constructor
 	function __construct($arr)
 	{
 		$_id = $arr['id'];
@@ -15,6 +17,8 @@ class Shop
 		$_distance = $arr['distance'];
 	}
 
+
+	// gets list of shops by distance
 	public static function getShops()
 	{
 		$pdo = new PDO('sqlite:data.db', null, null, [
@@ -37,6 +41,7 @@ class Shop
 		}
 	}
 
+	// returns if a shop is liked or not
 	public static function liked($user,$id){
 		$pdo = new PDO('sqlite:data.db', null, null, [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -51,6 +56,7 @@ class Shop
 		}
 	}
 
+	// returns if a shop is disliked or not
 	public static function disliked($user,$id){
 		$pdo = new PDO('sqlite:data.db', null, null, [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -65,6 +71,7 @@ class Shop
 		}
 	}
 
+	// To like or dislike a shop, (if type = 0 then dislike, if type = 1 then like)
 	public static function likeDislikeShop($user,$id,$type){
 		$time = time();
 		$pdo = new PDO('sqlite:../data.db', null, null, [
@@ -84,6 +91,7 @@ class Shop
 		}		
 	}
 
+	// to dislike a shop
 	public static function dislikeShop($user,$id,$type){
 		$time = time();
 		$pdo = new PDO('sqlite:../data.db', null, null, [
@@ -94,6 +102,7 @@ class Shop
 		$req->execute([$id,$user,$type,$time]);
 	}
 
+	// return if a shop has been dislike for less than 2 hours
 	public static function dislikedForLess2hours($user,$id){
 		$time = time();
 		$pdo = new PDO('sqlite:data.db', null, null, [
