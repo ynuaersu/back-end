@@ -15,7 +15,7 @@
     if(Shop::liked($_SESSION['id'],$shops[$i]->id)){
     ?>
     <div class="shop" id="shop_<?= $shops[$i]->id ?>">
-      <span class="name"><p><?= $shops[$i]->name; ?></p></span>
+      <span class="name"><p><?= $shops[$i]->name; ?> (<?= $shops[$i]->distance; ?>m)</p></span>
       <span class="image"><img src="<?= $shops[$i]->image; ?>"></span>
       <?php if(!Shop::disliked($_SESSION['id'],$shops[$i]->id)){ ?><span class="dislikebtn" id="dislike_<?= $shops[$i]->id;?>">Dislike</span><?php }?>
       <?php if(!Shop::disliked($_SESSION['id'],$shops[$i]->id)){ ?><span class="likebtn" style="background: #A0A0A0 ;" id="remove_<?= $shops[$i]->id;?>">X</span><?php }?>

@@ -18,7 +18,7 @@
     if((!Shop::disliked($_SESSION['id'],$shops[$i]->id) AND !Shop::liked($_SESSION['id'],$shops[$i]->id)) OR (Shop::disliked($_SESSION['id'],$shops[$i]->id) AND !Shop::dislikedForLess2hours($_SESSION['id'],$shops[$i]->id) AND !Shop::liked($_SESSION['id'],$shops[$i]->id)) ){
       ?>
       <div class="shop" id="shop_<?= $shops[$i]->id ?>">
-        <span class="name"><p><?= $shops[$i]->name; ?></p></span>
+        <span class="name"><p><?= $shops[$i]->name; ?>(<?= $shops[$i]->distance; ?>m)</p></span>
         <span class="image"><img src="<?= $shops[$i]->image; ?>"></span>
         <?php if(!Shop::disliked($_SESSION['id'],$shops[$i]->id)){ ?><span class="dislikebtn" id="dislike_<?= $shops[$i]->id;?>">Dislike</span><?php }?>
         <?php if(!Shop::liked($_SESSION['id'],$shops[$i]->id)){ ?><span class="likebtn" id="like_<?= $shops[$i]->id;?>">Like</span><?php }?>
